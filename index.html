@@ -1726,10 +1726,12 @@ function initTranslations() {
   while (node = walk.nextNode()) {
     const text = cleanText(node.nodeValue);
     if (text.length > 0 && langDict[text]) {
+      const leading = node.nodeValue.match(/^\s*/)[0];
+      const trailing = node.nodeValue.match(/\s*$/)[0];
       trackedNodes.push({
         node: node,
         en: node.nodeValue,
-        vi: node.nodeValue.replace(text, langDict[text])
+        vi: leading + langDict[text] + trailing
       });
     }
   }
