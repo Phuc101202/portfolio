@@ -989,7 +989,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact" class="nav-cta">Contact Me</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Me</a></li><li><button id="lang-toggle-btn" class="nav-cta" style="background:var(--clr-surface);color:var(--clr-text);cursor:pointer;border:1px solid var(--clr-border);margin-left:10px" onclick="toggleLang()">VI</button></li>
     </ul>
     <div class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -1543,7 +1543,7 @@
   window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMobile(); });
 
   /* ── Typewriter effect ── */
-  const phrases = [
+  let phrases = [
     'Backend Developer',
     'Microservices Architect',
     'Distributed Systems Engineer',
@@ -1606,6 +1606,107 @@
         ? 'var(--clr-text)' : '';
     });
   }, { passive: true });
+</script>
+
+<script>
+const langDict = {
+  "About": "V? t�i",
+  "Skills": "K? nang",
+  "Projects": "D? �n",
+  "Contact Me": "Li�n h?",
+  "Contact": "Li�n h?",
+  "Hi, I'm": "Xin ch�o, t�i l�",
+  "Available for work": "S?n s�ng l�m vi?c",
+  "I build robust, scalable, and high-performance backend systems. Passionate about event-driven architectures and clean code.": "T�i x�y d?ng c�c h? th?ng backend m?nh m?, c� t�nh m? r?ng v� hi?u su?t cao. �am m� ki?n tr�c hu?ng s? ki?n v� m� ngu?n s?ch.",
+  "View Projects": "Xem D? �n",
+  "GitHub Profile": "H? so GitHub",
+  "About Me": "V? t�i",
+  "A software engineer specializing in backend development and cloud architecture. I love solving complex problems with clean, maintainable code.": "M?t k? su ph?n m?m chuy�n v? ph�t tri?n backend v� ki?n tr�c d�m m�y. T�i th�ch gi?i quy?t c�c v?n d? ph?c t?p b?ng m� ngu?n s?ch, d? b?o tr�.",
+  "Projects Completed": "D? �n ho�n th�nh",
+  "My Skills": "K? nang",
+  "Technologies": "C�ng ngh?",
+  "Programming Languages": "Ng�n ng? l?p tr�nh",
+  "Frameworks": "Frameworks",
+  "Databases": "Co s? d? li?u",
+  "Message Brokers": "H�ng d?i th�ng di?p",
+  "Cloud & DevOps": "��m m�y & DevOps",
+  "Architecture": "Ki?n tr�c",
+  "Auth & Security": "X�c th?c & B?o m?t",
+  "AI & Integration": "AI & T�ch h?p",
+  "Featured Projects": "D? �n n?i b?t",
+  "Production-grade LinkedIn backend clone built with microservices architecture. 5 services: User, Post, Feed, Search, Notification + API Gateway": "B?n sao h? th?ng backend LinkedIn (m?c production) x�y d?ng theo ki?n tr�c microservices. 5 d?ch v?: User, Post, Feed, Search, Notification + API Gateway",
+  "Highlight: Fanout-on-Write feed, JWT auth, event-driven with Kafka": "�i?m nh?n: Feed co ch? Fanout-on-Write, x�c th?c JWT, hu?ng s? ki?n v?i Kafka",
+  "AI-Powered Distributed e-commerce architecture": "H? th?ng thuong m?i di?n t? ph�n t�n t�ch h?p AI",
+  "AI-powered tool to analyze and improve resumes": "C�ng c? ph�n t�ch v� t?i uu CV b?ng tr� tu? nh�n t?o (AI)",
+  "Full-stack diamond jewelry e-commerce platform (team project)": "N?n t?ng thuong m?i di?n t? trang s?c kim cuong Full-stack (d? �n nh�m)",
+  "Real-time seat booking system with .NET": "H? th?ng d?t v� theo th?i gian th?c b?ng .NET",
+  "Clean Architecture implementation with DDD principles": "C�i d?t Clean Architecture theo c�c nguy�n l� Domain-Driven Design (DDD)",
+  "Code": "M� ngu?n",
+  "Let's Connect": "K?t n?i",
+  "Feel free to reach out for collaborations or just a friendly chat.": "�?ng ng?i li�n h? d? h?p t�c ho?c don gi?n l� tr� chuy?n giao luu.",
+  "Email Me": "G?i Email",
+  "View GitHub": "Xem GitHub",
+  "Location": "V? tr�",
+  "Vietnam": "Vi?t Nam",
+  "� 2024�2025 Lam Minh Phuc. All rights reserved.": "� 2024�2025 L�m Minh Ph�c. �� dang k� b?n quy?n."
+};
+
+const typeEn = [
+  "Backend Developer",
+  "Microservices Architect",
+  "Distributed Systems Engineer",
+  "Java & .NET Developer"
+];
+const typeVi = [
+  "L?p tr�nh vi�n Backend",
+  "Ki?n tr�c su Microservices",
+  "K? su H? th?ng ph�n t�n",
+  "L?p tr�nh vi�n Java & .NET"
+];
+
+let currentLang = localStorage.getItem('lang') || 'en';
+const textNodes = [];
+
+// Initialize translations
+function initTranslations() {
+  const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  let node;
+  while (node = walk.nextNode()) {
+    const text = node.nodeValue.trim();
+    if (text.length > 0 && langDict[text]) {
+      node.originalEn = text;
+      textNodes.push(node);
+    }
+  }
+}
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.getElementById('lang-toggle-btn').innerText = lang === 'en' ? 'VI' : 'EN';
+  
+  textNodes.forEach(node => {
+    if (lang === 'vi') {
+      node.nodeValue = node.nodeValue.replace(node.originalEn, langDict[node.originalEn]);
+    } else {
+      node.nodeValue = node.nodeValue.replace(langDict[node.originalEn], node.originalEn);
+    }
+  });
+
+  phrases = lang === 'vi' ? typeVi : typeEn;
+}
+
+function toggleLang() {
+  applyLanguage(currentLang === 'en' ? 'vi' : 'en');
+}
+
+// Ensure the button is styled dynamically
+window.addEventListener('DOMContentLoaded', () => {
+  initTranslations();
+  if (currentLang === 'vi') {
+    applyLanguage('vi');
+  }
+});
 </script>
 </body>
 </html>
