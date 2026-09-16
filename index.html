@@ -1608,49 +1608,98 @@
   }, { passive: true });
 </script>
 
+
 <script>
 const langDict = {
-  "About": "V? t�i",
-  "Skills": "K? nang",
-  "Projects": "D? �n",
-  "Contact Me": "Li�n h?",
-  "Contact": "Li�n h?",
-  "Hi, I'm": "Xin ch�o, t�i l�",
-  "Available for work": "S?n s�ng l�m vi?c",
-  "I build robust, scalable, and high-performance backend systems. Passionate about event-driven architectures and clean code.": "T�i x�y d?ng c�c h? th?ng backend m?nh m?, c� t�nh m? r?ng v� hi?u su?t cao. �am m� ki?n tr�c hu?ng s? ki?n v� m� ngu?n s?ch.",
-  "View Projects": "Xem D? �n",
-  "GitHub Profile": "H? so GitHub",
-  "About Me": "V? t�i",
-  "A software engineer specializing in backend development and cloud architecture. I love solving complex problems with clean, maintainable code.": "M?t k? su ph?n m?m chuy�n v? ph�t tri?n backend v� ki?n tr�c d�m m�y. T�i th�ch gi?i quy?t c�c v?n d? ph?c t?p b?ng m� ngu?n s?ch, d? b?o tr�.",
-  "Projects Completed": "D? �n ho�n th�nh",
-  "My Skills": "K? nang",
-  "Technologies": "C�ng ngh?",
-  "Programming Languages": "Ng�n ng? l?p tr�nh",
+  "2": "2",
+  "About": "Về tôi",
+  "Skills": "Kỹ năng",
+  "Projects": "Dự án",
+  "Contact Me": "Liên hệ",
+  "Contact": "Liên hệ",
+  "Available for opportunities": "Sẵn sàng đón nhận cơ hội",
+  "Hi, I'm": "Xin chào, tôi là",
+  "Passionate backend engineer from": "Kỹ sư Backend đam mê công nghệ đến từ",
+  "Vietnam 🇻🇳": "Việt Nam 🇻🇳",
+  "specialising in distributed systems, microservices architecture, and cloud-native applications. I build highly scalable, event-driven platforms with Java, Spring Boot and .NET.": "chuyên về hệ thống phân tán, kiến trúc microservices và các ứng dụng cloud-native. Tôi xây dựng các nền tảng có khả năng mở rộng cao, hướng sự kiện bằng Java, Spring Boot và .NET.",
+  "View Projects": "Xem Dự án",
+  "GitHub Profile": "Hồ sơ GitHub",
+  "Scroll down": "Cuộn xuống",
+  "Backend Dev": "Lập trình Backend",
+  "Who I Am": "Tôi là ai",
+  "Crafting": "Kiến tạo",
+  "scalable systems": "các hệ thống mở rộng",
+  "that matter": "mang lại giá trị thực",
+  "I'm": "Tôi là",
+  "(Phúcc), a backend developer and software engineer based in": "(Phúcc), một kỹ sư phần mềm và lập trình viên backend tại",
+  "Vietnam": "Việt Nam",
+  ". I'm deeply passionate about building reliable, high-performance distributed systems that solve real-world problems at scale.": ". Tôi đam mê xây dựng các hệ thống phân tán hiệu suất cao, đáng tin cậy để giải quyết các bài toán thực tế ở quy mô lớn.",
+  "My primary expertise lies in": "Chuyên môn chính của tôi là hệ sinh thái",
+  "and": "và",
+  "ecosystems, designing microservice architectures with event-driven communication via": ", thiết kế kiến trúc microservice với giao tiếp hướng sự kiện qua",
+  ", and leveraging cloud services like AWS.": ", và tận dụng các dịch vụ đám mây như AWS.",
+  "I take pride in writing clean, maintainable code guided by principles like": "Tôi tự hào về việc viết mã nguồn sạch, dễ bảo trì, tuân thủ các nguyên tắc như",
+  ", Domain-Driven Design and SOLID — because great software is built to last, not just to ship.": ", Domain-Driven Design và SOLID — vì phần mềm tốt phải có giá trị lâu dài chứ không chỉ để giao cho xong.",
+  "Production-grade microservices with Spring Cloud Gateway &amp; service discovery": "Microservices chuẩn production với Spring Cloud Gateway & service discovery",
+  "Event-driven architectures with Apache Kafka and fanout patterns": "Kiến trúc hướng sự kiện với Apache Kafka và pattern fanout",
+  "AI integration with Ollama LLM and distributed system design patterns": "Tích hợp AI với Ollama LLM và các mẫu thiết kế hệ thống phân tán",
+  "Containerised deployments with Docker &amp; Docker Compose": "Triển khai container với Docker & Docker Compose",
+  "6+": "6+",
+  "GitHub Projects": "Dự án GitHub",
+  "5+": "5+",
+  "Microservices": "Microservices",
+  "10+": "10+",
+  "Technologies": "Công nghệ",
+  "Languages Mastered": "Ngôn ngữ Lập trình",
+  "What I Work With": "Công cụ làm việc",
+  "Skills &amp;": "Kỹ năng &",
+  "A curated toolkit of technologies I use to architect, build, and deploy production-grade systems.": "Bộ công cụ công nghệ tôi sử dụng để kiến trúc, xây dựng và triển khai các hệ thống production.",
+  "Languages": "Ngôn ngữ",
   "Frameworks": "Frameworks",
-  "Databases": "Co s? d? li?u",
-  "Message Brokers": "H�ng d?i th�ng di?p",
-  "Cloud & DevOps": "��m m�y & DevOps",
-  "Architecture": "Ki?n tr�c",
-  "Auth & Security": "X�c th?c & B?o m?t",
-  "AI & Integration": "AI & T�ch h?p",
-  "Featured Projects": "D? �n n?i b?t",
-  "Production-grade LinkedIn backend clone built with microservices architecture. 5 services: User, Post, Feed, Search, Notification + API Gateway": "B?n sao h? th?ng backend LinkedIn (m?c production) x�y d?ng theo ki?n tr�c microservices. 5 d?ch v?: User, Post, Feed, Search, Notification + API Gateway",
-  "Highlight: Fanout-on-Write feed, JWT auth, event-driven with Kafka": "�i?m nh?n: Feed co ch? Fanout-on-Write, x�c th?c JWT, hu?ng s? ki?n v?i Kafka",
-  "AI-Powered Distributed e-commerce architecture": "H? th?ng thuong m?i di?n t? ph�n t�n t�ch h?p AI",
-  "AI-powered tool to analyze and improve resumes": "C�ng c? ph�n t�ch v� t?i uu CV b?ng tr� tu? nh�n t?o (AI)",
-  "Full-stack diamond jewelry e-commerce platform (team project)": "N?n t?ng thuong m?i di?n t? trang s?c kim cuong Full-stack (d? �n nh�m)",
-  "Real-time seat booking system with .NET": "H? th?ng d?t v� theo th?i gian th?c b?ng .NET",
-  "Clean Architecture implementation with DDD principles": "C�i d?t Clean Architecture theo c�c nguy�n l� Domain-Driven Design (DDD)",
-  "Code": "M� ngu?n",
-  "Let's Connect": "K?t n?i",
-  "Feel free to reach out for collaborations or just a friendly chat.": "�?ng ng?i li�n h? d? h?p t�c ho?c don gi?n l� tr� chuy?n giao luu.",
-  "Email Me": "G?i Email",
-  "View GitHub": "Xem GitHub",
-  "Location": "V? tr�",
-  "Vietnam": "Vi?t Nam",
-  "� 2024�2025 Lam Minh Phuc. All rights reserved.": "� 2024�2025 L�m Minh Ph�c. �� dang k� b?n quy?n."
+  "Databases": "Cơ sở dữ liệu",
+  "Messaging": "Hàng đợi Thông điệp",
+  "Cloud &amp; DevOps": "Cloud & DevOps",
+  "Architecture": "Kiến trúc",
+  "Event-Driven": "Hướng sự kiện",
+  "Auth &amp; Security": "Xác thực & Bảo mật",
+  "AI Integration": "Tích hợp AI",
+  "AI/ML Tooling": "Công cụ AI/ML",
+  "What I've Built": "Sản phẩm của tôi",
+  "Featured": "Dự án",
+  "A selection of real-world projects that demonstrate my engineering depth across different domains and tech stacks.": "Tuyển tập các dự án thực tế minh họa kinh nghiệm kỹ thuật của tôi qua nhiều lĩnh vực và công nghệ khác nhau.",
+  "Featured Project": "Dự án nổi bật",
+  "Production-grade LinkedIn backend clone with a full microservices architecture. 5 domain services —": "Bản sao backend LinkedIn chuẩn production với kiến trúc microservices hoàn chỉnh. 5 dịch vụ domain —",
+  "User, Post, Feed, Search, Notification": "User, Post, Feed, Search, Notification",
+  "— orchestrated via an API Gateway. Implements a Fanout-on-Write feed system, full-text search with Elasticsearch, async event processing with Kafka, and JWT-based security.": "— được điều phối qua API Gateway. Cài đặt hệ thống Feed theo mô hình Fanout-on-Write, tìm kiếm với Elasticsearch, xử lý sự kiện bất đồng bộ bằng Kafka, và bảo mật JWT.",
+  "Fanout-on-Write &bull; Event-Driven": "Fanout-on-Write &bull; Hướng sự kiện",
+  "eShop Distributed": "eShop Distributed",
+  "AI-powered distributed e-commerce platform built with .NET Aspire. Integrates": "Nền tảng thương mại điện tử phân tán tích hợp AI xây dựng bằng .NET Aspire. Kết hợp",
+  "for LLM-driven features, identity management via Keycloak, async messaging with RabbitMQ, and caching with Redis — all orchestrated with .NET Aspire's cloud-native primitives.": "cho các tính năng dựa trên LLM, quản lý định danh qua Keycloak, xử lý thông điệp bằng RabbitMQ và cache bằng Redis — tất cả được điều phối bởi .NET Aspire.",
+  "AI-Powered": "Tích hợp AI",
+  "An intelligent tool that leverages Large Language Models to analyse resumes, identify gaps, and provide actionable improvement suggestions. Designed to help developers and job seekers craft stronger, role-targeted applications.": "Công cụ thông minh tận dụng LLM để phân tích CV, tìm điểm yếu và đưa ra gợi ý cải thiện. Giúp các lập trình viên và ứng viên tạo CV chất lượng, chuẩn xác hơn.",
+  "Resume Parsing": "Phân tích CV",
+  "LLM-powered": "Tích hợp LLM",
+  "Full-stack diamond jewelry e-commerce platform developed as a team project. Features product management, order processing, user authentication, and a polished storefront experience built with modern web technologies.": "Nền tảng thương mại điện tử trang sức kim cương (dự án nhóm). Tích hợp quản lý sản phẩm, đơn hàng, xác thực người dùng và trải nghiệm mua sắm hiện đại.",
+  "Full-Stack": "Full-Stack",
+  "E-Commerce": "Thương mại Điện tử",
+  "Team Project": "Dự án nhóm",
+  "Real-time seat reservation system built with .NET. Handles concurrency and race conditions inherent to booking flows, ensuring consistent state across concurrent reservation attempts with optimistic locking strategies.": "Hệ thống đặt ghế theo thời gian thực bằng .NET. Xử lý tốt các vấn đề về race conditions và concurrency trong luồng đặt vé, đảm bảo tính toàn vẹn dữ liệu.",
+  "Real-Time": "Thời gian thực",
+  "Concurrency": "Đồng thời (Concurrency)",
+  "A reference implementation of Clean Architecture principles combined with Domain-Driven Design (DDD) in C#. Serves as a solid, reusable starting point for building maintainable enterprise-grade .NET applications.": "Bản cài đặt tham khảo các nguyên lý Clean Architecture và Domain-Driven Design (DDD) trong C#. Đóng vai trò làm bộ khung cho các ứng dụng .NET quy mô doanh nghiệp.",
+  "Reference Impl.": "Mã nguồn tham khảo",
+  "Get In Touch": "Liên hệ",
+  "Let's": "Hãy",
+  "Connect": "Kết nối",
+  "Whether you have a project in mind, want to discuss distributed systems, or are looking for a backend developer — my inbox is always open.": "Dù bạn có một dự án mới, muốn thảo luận về hệ thống phân tán, hay đang tìm kiếm một lập trình viên backend — hộp thư của tôi luôn mở.",
+  "Available on request": "Cung cấp theo yêu cầu",
+  "Location": "Vị trí",
+  "Open to Opportunities": "Đang tìm kiếm cơ hội mới",
+  "I'm actively exploring exciting backend engineering roles, especially in distributed systems, cloud-native applications, and microservices. Let's build something impactful together!": "Tôi đang tích cực tìm kiếm các vị trí kỹ sư backend, đặc biệt về mảng hệ thống phân tán, cloud-native và microservices. Hãy cùng nhau xây dựng những sản phẩm tuyệt vời!",
+  "Send Email": "Gửi Email",
+  ". Built with ❤️ in Vietnam.": ". Xây dựng với ❤️ tại Việt Nam.",
+  "© 2024–2025": "© 2024–2025"
 };
-
 const typeEn = [
   "Backend Developer",
   "Microservices Architect",
@@ -1658,24 +1707,30 @@ const typeEn = [
   "Java & .NET Developer"
 ];
 const typeVi = [
-  "L?p tr�nh vi�n Backend",
-  "Ki?n tr�c su Microservices",
-  "K? su H? th?ng ph�n t�n",
-  "L?p tr�nh vi�n Java & .NET"
+  "Lập trình viên Backend",
+  "Kiến trúc sư Microservices",
+  "Kỹ sư Hệ thống phân tán",
+  "Lập trình viên Java & .NET"
 ];
 
 let currentLang = localStorage.getItem('lang') || 'en';
-const textNodes = [];
+let trackedNodes = [];
 
-// Initialize translations
+function cleanText(text) {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
 function initTranslations() {
   const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
   let node;
   while (node = walk.nextNode()) {
-    const text = node.nodeValue.trim();
+    const text = cleanText(node.nodeValue);
     if (text.length > 0 && langDict[text]) {
-      node.originalEn = text;
-      textNodes.push(node);
+      trackedNodes.push({
+        node: node,
+        en: node.nodeValue,
+        vi: node.nodeValue.replace(text, langDict[text])
+      });
     }
   }
 }
@@ -1683,24 +1738,22 @@ function initTranslations() {
 function applyLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('lang', lang);
-  document.getElementById('lang-toggle-btn').innerText = lang === 'en' ? 'VI' : 'EN';
+  const btn = document.getElementById('lang-toggle-btn');
+  if (btn) btn.innerText = lang === 'en' ? 'VI' : 'EN';
   
-  textNodes.forEach(node => {
-    if (lang === 'vi') {
-      node.nodeValue = node.nodeValue.replace(node.originalEn, langDict[node.originalEn]);
-    } else {
-      node.nodeValue = node.nodeValue.replace(langDict[node.originalEn], node.originalEn);
-    }
+  trackedNodes.forEach(item => {
+    item.node.nodeValue = lang === 'vi' ? item.vi : item.en;
   });
 
-  phrases = lang === 'vi' ? typeVi : typeEn;
+  if (typeof phrases !== 'undefined') {
+    phrases = lang === 'vi' ? typeVi : typeEn;
+  }
 }
 
 function toggleLang() {
   applyLanguage(currentLang === 'en' ? 'vi' : 'en');
 }
 
-// Ensure the button is styled dynamically
 window.addEventListener('DOMContentLoaded', () => {
   initTranslations();
   if (currentLang === 'vi') {
